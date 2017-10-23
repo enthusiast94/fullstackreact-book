@@ -148,6 +148,9 @@ class Timer extends Component {
   };
 
   componentDidMount() {
+    this.setState({
+      isRunning: this.props.timer.runningSince != null
+    });
     this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 100);
   }
 
