@@ -1,0 +1,12 @@
+.container {
+	padding: 20px;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.selected {
+	color: green;
+	font-weight: bold;
+}
