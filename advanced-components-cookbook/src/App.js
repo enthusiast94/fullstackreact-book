@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Switch from './components/Switch';
 import Counter from './components/Counter';
+import Container from './components/PropsChildrenContainer';
 
 export default class App extends Component {
 
@@ -20,6 +21,12 @@ export default class App extends Component {
 
         <h1>Counter</h1>
         <Counter />
+
+        <h1>Props Children Container</h1>
+        <Container>
+          <div>This is a child</div>
+          <div>This is another child</div>
+        </Container>
       </div>
     )
   }
