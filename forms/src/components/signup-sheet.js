@@ -52,7 +52,7 @@ export default class SignupSheet extends Component {
         const fieldErrors = {};
         Object.keys(this.state.fields).forEach(field => {
             if (this.state.fields[field].length === 0) {
-                fieldErrors[field] = `${field} cannot be empty`;
+                fieldErrors[fi  eld] = `${field} cannot be empty`;
             }
         });
 
@@ -73,13 +73,13 @@ export default class SignupSheet extends Component {
                 },
                 people: prevState.people.concat([prevState.fields])
             }
-        });
+        }, () => this.validateForm());
     }
 }
 
 function ErrorableInputField(props) {
     return (
-        <div style={{ display: "block" }}>
+        <div>
             <input value={props.value} name={props.name} type={props.type} placeholder={props.placeholder}
                 onChange={props.onChange} />
             <span style={{ color: "red", fontSize: "small", marginLeft: "10px" }}>{props.error}</span>
