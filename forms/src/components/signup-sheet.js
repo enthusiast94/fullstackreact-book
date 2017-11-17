@@ -13,7 +13,7 @@ export default class SignupSheet extends Component {
         fieldErrors: {},
         people: []
     }
-
+    
     componentDidMount() {
         this.validateForm();
     }
