@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`store1 dispatching actions 1`] = `
 Object {
   "messages": Array [

@@ -1,47 +1,7 @@
 import React from 'react';
+import Store from './store';
 
-const initialState = {
-  messages: []
-};
-
-function createStore(reducer, initialState) {
-  let state = initialState;
-  const listeners = [];
-
-  const getState = () => (state);
-
-  const dispatch = (action) => {
-    state = reducer(state, action);
-    listeners.forEach(listener => listener());
-    console.log(state);
-  };
-
-  const subscribe = (cb) => {
-    listeners.push(cb);
-  }
-
-  return {
-    getState,
-    dispatch,
-    subscribe
-  };
-}
-
-function reducer(state, action) {
-  if (action.type === 'ADD_MESSAGE') {
-    return {
-      messages: state.messages.concat([action.message])
-    };
-  } else if (action.type === 'DELETE_MESSAGE') {
-    return {
-      messages: state.messages.filter((message, idx) => idx !== action.index)
-    };
-  } else {
-    return state;
-  }
-}
-
-const store = createStore(reducer, initialState);
+const store = Store.store
 
 class App extends React.Component {
 
@@ -125,6 +85,6 @@ class MessageInput extends React.Component {
 }
 
 
-const AppWrapper = {createStore, reducer, initialState, App};
-export default AppWrapper;
+const Components = {App, MessageList, MessageInput};
+export default Components;
 
