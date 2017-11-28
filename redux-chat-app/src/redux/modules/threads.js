@@ -1,4 +1,4 @@
-import * as shortid from "shortid";
+import shortid from "shortid";
 
 const ADD_MESSAGE = "redux-chat-app/threads/ADD_MESSAGE";
 const DELETE_MESSAGE = "redux-chat-app/threads/DELETE_MESSAGE";
