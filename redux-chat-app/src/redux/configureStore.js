@@ -10,7 +10,7 @@ const initialState = {
                 {
                     id: 1,
                     timestamp: Date.now(),
-                    body: "hey test message from thread 1"  
+                    body: "oh boy"  
                 }
             ]
         },
@@ -20,7 +20,7 @@ const initialState = {
                 {
                     id: 1,
                     timestamp: Date.now(),
-                    body: "hey test message from thread 2"  
+                    body: "sup mate?"  
                 }
             ]
         }

@@ -20,8 +20,9 @@ export default class ThreadTabs extends React.Component {
     render() {
         const state = this.context.store.getState();
         const threadIds = state.threads.map(thread => thread.id);
+        
         return (
             <Tabs threads={threadIds} activeThread={state.activeThreadId} onTabClick={this.onTabClick} />
-        )
+        );
     }
 }

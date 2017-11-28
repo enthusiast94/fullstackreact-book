@@ -1,11 +1,12 @@
 import React from 'react';
 import ThreadTabs from './ThreadTabs';
+import Thread from './Thread';
 
 export default function App() {
   return (
-    <div>
-      <h1>React Redux Chat App</h1>
+    <div className="container">
       <ThreadTabs />
+      <Thread />
     </div>
   );
 }
