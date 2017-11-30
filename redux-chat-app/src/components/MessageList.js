@@ -4,7 +4,7 @@ export default function MessageList(props) {
     const messages = props.messages.map(message => {
         return (
             <li key={message.id}>
-                {`${message.body} @ ${message.timestamp}`}
+                <strong>{message.body}</strong> @ {humanizeTimeStamp(message.timestamp)}
             </li>
         );
     });
@@ -13,4 +13,8 @@ export default function MessageList(props) {
             {messages}
         </ul>
     );
+}
+
+function humanizeTimeStamp(timestamp) {
+    return new Date(timestamp).toString();
 }
