@@ -4,7 +4,7 @@ export default function Tabs(props) {
     const tabs = props.threads.map(thread => {
         return (
             <li key={thread} className="nav-item clickable" onClick={(event) => props.onTabClick(thread)}>
-                <a className={thread === props.activeThread ? "nav-link active" : "nav-link"}>{thread}</a>
+                <a className={thread === props.activeThread ? "nav-link active" : "nav-link"}>{thread} ({props.messageCounts[thread]})</a>
             </li>
         );
     });
