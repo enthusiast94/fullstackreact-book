@@ -27,7 +27,7 @@ export default class MessageInput extends React.Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                <input style={{ padding: '10px', width: '100%' }} placeholder="Type your message here" value={this.state.message} onChange={this.onMessageChange} />
+                <input className="form-control" style={{ padding: '10px', width: '100%' }} placeholder="Type your message here" value={this.state.message} onChange={this.onMessageChange} />
             </form>
         );
     }

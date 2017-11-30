@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MessageList from '../components/MessageList';
 import MessageInput from '../components/MessageInput';
-import { addMessage } from '../redux/modules/threads';
+import { addMessage, deleteMessage } from '../redux/modules/threads';
 
 export default class Thread extends React.Component {
 
@@ -18,14 +18,18 @@ export default class Thread extends React.Component {
 
     onMessageSubmit = (messageBody) => {
         this.store.dispatch(addMessage(this.store.getState().activeThreadId, messageBody));
-    }
+    };
+
+    onMessageClick = (messageId) => {
+        this.store.dispatch(deleteMessage(messageId));
+    };
 
     render() {
         const state = this.store.getState();
         const activeThread = state.threads.find(thread => thread.id === state.activeThreadId);
         return (
             <div>
-                <MessageList messages={activeThread.messages} />
+                <MessageList onMessageClick={this.onMessageClick} messages={activeThread.messages} />
                 <br />
                 <MessageInput onSubmit={this.onMessageSubmit} />
             </div>
