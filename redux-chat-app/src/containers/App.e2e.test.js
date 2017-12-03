@@ -81,7 +81,6 @@ describe('App e2e', () => {
         expect(messages.at(1).text()).toContain(newMessage);
     });
 
-
     it('should be able to switch tabs and update state.activeThreadId', () => {
         let tabs = wrapper.find('Tabs .nav-item .clickable');
         let tabLinks = tabs.find('a .nav-link');
