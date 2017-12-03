@@ -1,4 +1,4 @@
-import { threadReducer, activeThreadIdReducer, addMessage, deleteMessage, threadsReducer, openThread } from '../threads';
+import { threadReducer, activeThreadIdReducer, addMessage, deleteMessage, threadsReducer, openThread } from './threads';
 import shortid from "shortid";
 
 describe('thread related reducers', () => {

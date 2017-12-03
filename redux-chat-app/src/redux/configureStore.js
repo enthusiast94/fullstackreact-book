@@ -29,11 +29,11 @@ const initialState = {
 };
 initialState.activeThreadId = initialState.threads[0].id;
 
-export default function configureStore() {
-    return createStore((state = initialState, action) => {
+export default function configureStore(state = initialState) {
+    return createStore((state, action) => {
         return {
             threads: threadsReducer(state.threads, action),
             activeThreadId: activeThreadIdReducer(state.activeThreadId, action)
         }
-    });
+    }, state);
 }
